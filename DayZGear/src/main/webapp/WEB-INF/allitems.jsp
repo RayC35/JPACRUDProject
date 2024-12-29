@@ -14,14 +14,24 @@
 	
 	<c:forEach var="items" items="${itemList}">
 				<tr>
-					<td><a href="getFilm.do?filmId=${items.id}">${items.name}</a></td>
+					<td><a href="idsearchresult.do?itemId=${items.id}">${items.name}</a></td>
 					<td>${items.type }</td>
 					<td>${items.condition}</td>
 					<td>${items.quantity}</td>
+					<!--DELETE FORM -->
+			<form action="deleteFilm.do" method="post">
+				<input type="hidden" name="id" value="${items.id}" /> <input
+					type="submit" value="Delete">
+			</form>
+
+			<!-- EDIT FORM -->
+			<form action="updateItem.do" method="post">
+				<input type="hidden" name="id" value="${items.id}" /> <input
+					type="submit" value="Edit">
+			</form>
 				</tr><br>
 			</c:forEach>
 
-<%-- ${itemList } --%>
 
 
 </body>

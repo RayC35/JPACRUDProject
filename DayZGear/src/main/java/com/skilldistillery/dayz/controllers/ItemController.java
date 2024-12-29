@@ -35,5 +35,14 @@ public class ItemController {
 		model.addAttribute("searchResult", item);
 		return "idsearchresult";
 	}
-
+	
+	@RequestMapping(path= {"addnewitem.do"})
+	public String goAddItem(Model model) {
+		return "addnewitem";
+	}
+	
+	@RequestMapping(path= {"delete.do"})
+	public String deleteById(Model model) {
+		return "allitems";
+	}
 }
