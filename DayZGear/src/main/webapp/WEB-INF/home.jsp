@@ -9,11 +9,11 @@
 <body>
 <h1>DayZ Inventory Tracker</h1>
 
-<form action = "idsearch.do">
+<form action = "idsearchresult.do" method = "get">
 	<fieldset>
 		<legend><h3>Find Item by ID</h3></legend>
-		<label for="id">Enter ID:</label>
-		<input name="id" id="id">
+		<label for="itemId">Enter ID:</label>
+		<input name="itemId" id="itemId">
 		<input type="submit" value="Submit">
 	</fieldset>
 </form>

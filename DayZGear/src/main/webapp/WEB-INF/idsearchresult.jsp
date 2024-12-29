@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="jakarta.tags.core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,12 +14,13 @@
 	</nav>
 <h1>Search Result</h1>
 		<c:choose>
-		<c:when test="">
+		<c:when test="${not empty searchResult }">
 		  <ul>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
+			<li><strong>ID: </strong>${ searchResult.id}</li>
+			<li><strong>Item Name: </strong>${ searchResult.name}</li>
+			<li><strong>Item Type: </strong>${searchResult.type}</li>
+			<li><strong>Item Condition: </strong>${searchResult.condition}</li>
+			<li><strong>Quantity: </strong>${searchResult.quantity}</li>
 		  </ul>
 		</c:when>
 		<c:otherwise>
