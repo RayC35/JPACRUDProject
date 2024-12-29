@@ -25,6 +25,7 @@ public class ItemDAOJPAImpl implements ItemDAO {
 
 	@Override
 	public Item findById(int itemId) {
+//		String jpql = "SELECT "
 		return em.find(Item.class, itemId);
 	}
 
