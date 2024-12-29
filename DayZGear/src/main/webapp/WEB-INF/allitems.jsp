@@ -19,14 +19,14 @@
 					<td>${items.condition}</td>
 					<td>${items.quantity}</td>
 					<!--DELETE FORM -->
-			<form action="deleteFilm.do" method="post">
-				<input type="hidden" name="id" value="${items.id}" /> <input
+			<form action="delete.do" method="post">
+				<input type="hidden" name="itemId" value="${items.id}" /> <input
 					type="submit" value="Delete">
 			</form>
 
 			<!-- EDIT FORM -->
-			<form action="updateItem.do" method="post">
-				<input type="hidden" name="id" value="${items.id}" /> <input
+			<form action="updateItem.do" method="get">
+				<input type="hidden" name="itemId" value="${items.id}" /> <input
 					type="submit" value="Edit">
 			</form>
 				</tr><br>

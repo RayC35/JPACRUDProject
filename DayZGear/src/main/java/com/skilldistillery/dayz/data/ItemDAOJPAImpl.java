@@ -25,7 +25,6 @@ public class ItemDAOJPAImpl implements ItemDAO {
 
 	@Override
 	public Item findById(int itemId) {
-//		String jpql = "SELECT "
 		return em.find(Item.class, itemId);
 	}
 
@@ -39,13 +38,26 @@ public class ItemDAOJPAImpl implements ItemDAO {
 
 	@Override
 	public Item update(int itemId, Item updatingItem) {
-		// TODO Auto-generated method stub
+		Item existingItem = em.find(Item.class, itemId);
+		if (existingItem != null) {
+			existingItem.setName(updatingItem.getName());
+			existingItem.setType(updatingItem.getType());
+			existingItem.setCondition(updatingItem.getCondition());
+			existingItem.setQuantity(updatingItem.getQuantity());
+			
+			return existingItem;
+		} else {
 		return null;
+		}
 	}
 
 	@Override
 	public boolean deleteById(int itemId) {
-		// TODO Auto-generated method stub
+		Item itemToDelete = em.find(Item.class, itemId);
+		if (itemToDelete != null) {
+			em.remove(itemToDelete);
+			return true;
+		}
 		return false;
 	}
 

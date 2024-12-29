@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>DayZ Inventory</title>
 </head>
 <body>
+<h1>Edit Item</h1>
 
+<%-- ${item }
+${ searchResult.name }
+${ itemList }
+${items.name } --%>
 </body>
 </html>

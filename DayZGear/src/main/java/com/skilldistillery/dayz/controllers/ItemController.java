@@ -22,7 +22,7 @@ public class ItemController {
 		return "home";
 	}
 	
-	//WORKING
+	//WORKING -- change method name?
 	@RequestMapping( path= {"allitems.do"})
 	public String home(Model model) {
 		model.addAttribute("itemList", itemDao.findAll());
@@ -41,8 +41,35 @@ public class ItemController {
 		return "addnewitem";
 	}
 	
-	@RequestMapping(path= {"delete.do"})
-	public String deleteById(Model model) {
-		return "allitems";
+	@RequestMapping(path= {"delete.do"}, method = RequestMethod.POST)
+	public String deleteItem(@RequestParam("itemId") int itemId, Model model) {
+	    boolean isDeleted = itemDao.deleteById(itemId);
+	    if (isDeleted) {
+	        return "redirect:allitems.do";
+	    } else {
+	        model.addAttribute("error", "Item could not be deleted.");
+	        return "allitems"; 
+//	public String deleteById(Model model) {
+//		return "allitems";
+	}
+	
+//	@RequestMapping(path= {"updateItem.do"})
+//	public String goUpdate(Model model, @RequestParam("itemId") int itemId) {
+//		Item item = itemDao.findById(itemId);
+//		model.addAttribute("searchResult", item);
+//		return "updateItem";
+//	}
+	
+//	@RequestMapping(path= {"updateItem.do"}, method = RequestMethod.GET)
+//	public String goUpdate(Model model, @RequestParam("itemId") int itemId) {
+//		model.addAttribute("item", itemDao.findById(itemId));
+//		return "updateItem";
+//	}
+	    
+//	@RequestMapping(path= {"updateItem.do"}, method = RequestMethod.GET)
+//	public String update(Model model, @RequestParam("itemId") int itemId) {
+//		model.addAttribute("item", itemDao.findById(itemId));
+//		return "updateItem";
+//	}
 	}
 }
