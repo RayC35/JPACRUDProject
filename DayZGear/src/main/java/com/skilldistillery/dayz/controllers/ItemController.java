@@ -39,27 +39,43 @@ public class ItemController {
 		return "idsearchresult";
 	}
 	
+	//WORKING
 	@RequestMapping(path= {"addnewitem.do"}, method = RequestMethod.GET)
 	public String goAddItem(Model model) {
 		model.addAttribute("item", new Item());
 		return "addnewitem";
 	}
 	
-	@RequestMapping(path = "addnewitem.do", method = RequestMethod.POST)
+	//WORKING
+	@RequestMapping(path = "newitemconfirm.do", method = RequestMethod.POST)
 	public String addNewItem(@ModelAttribute Item item, Model model) {
 	    Item createdItem = itemDao.create(item);
 	    if (createdItem != null) {
 	        model.addAttribute("item", createdItem); 
-	        return "redirect:idsearchresult.do?itemId=" + createdItem.getId();
+//	        return "redirect:idsearchresult.do?itemId=" + createdItem.getId();
+	        return "newitemconfirm";
 	    } else {
 	            model.addAttribute("error", "Item could not be created.");
-	            return "addnewitem";
+//	            return "addnewitem";
+	            return "newitemconfirm";
 	        }
 	}
-//	@RequestMapping(path= {"newitemconfirm.do"})
-//	public String create() {
-//		return "newitemconfirm";
-//	}
+	
+	//WORKING
+	@RequestMapping(path= {"updateItem.do"}, method = RequestMethod.GET)
+	public String goUpdateItem(Model model, @RequestParam("itemId") int itemId) {
+		model.addAttribute("item", itemDao.findById(itemId));
+		return "updateitem";
+	}
+	
+	//PROCESS FORM SUBMISSION - FOR UPDATE -- SEEMS TO WORK
+	@RequestMapping(path = {"updateItem.do"}, method= RequestMethod.POST)
+	public String updateExistingItem(Model model, @ModelAttribute Item item) {
+		Item updatedItem = itemDao.update(item.getId(), item); 
+		model.addAttribute("items", updatedItem);
+		return "redirect:allitems.do";
+	}
+	
 	            
 	//WORKING
 	@RequestMapping(path= {"delete.do"}, method = RequestMethod.POST)
@@ -70,25 +86,6 @@ public class ItemController {
 	    } else {
 	        model.addAttribute("error", "Item could not be deleted.");
 	        return "allitems"; 
-	}
-	
-//	@RequestMapping(path= {"updateItem.do"})
-//	public String goUpdate(Model model, @RequestParam("itemId") int itemId) {
-//		Item item = itemDao.findById(itemId);
-//		model.addAttribute("searchResult", item);
-//		return "updateItem";
-//	}
-	
-//	@RequestMapping(path= {"updateItem.do"}, method = RequestMethod.GET)
-//	public String goUpdate(Model model, @RequestParam("itemId") int itemId) {
-//		model.addAttribute("item", itemDao.findById(itemId));
-//		return "updateItem";
-//	}
-	    
-//	@RequestMapping(path= {"updateItem.do"}, method = RequestMethod.GET)
-//	public String update(Model model, @RequestParam("itemId") int itemId) {
-//		model.addAttribute("item", itemDao.findById(itemId));
-//		return "updateItem";
-//	}
-	}
+	    		}
+		}
 }

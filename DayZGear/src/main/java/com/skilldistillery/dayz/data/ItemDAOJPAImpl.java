@@ -17,6 +17,7 @@ public class ItemDAOJPAImpl implements ItemDAO {
 	@PersistenceContext
 	private EntityManager em;
 	
+	//IS THE JPQL NECESSARY?
 	@Override
 	public List<Item> findAll() {
 		String jpql = "SELECT i from Item i";
@@ -28,8 +29,6 @@ public class ItemDAOJPAImpl implements ItemDAO {
 		return em.find(Item.class, itemId);
 	}
 
-	//NO transaction.begin/commit
-	//NO em.close()
 	@Override
 	public Item create(Item newItem) {
 		em.persist(newItem);

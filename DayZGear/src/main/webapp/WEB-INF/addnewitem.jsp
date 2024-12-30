@@ -9,10 +9,12 @@
 <title>DayZ Inventory</title>
 </head>
 <body>
+	<nav>
+		<a href="home.do">Home</a>
+	</nav>
 <h1>Add A New Item</h1>
 
-<!-- ADD ACTION -->
-<fieldset><form action="addnewitem.do" method="post">
+<fieldset><form action="newitemconfirm.do" method="post">
 <label for="name"><strong>Item Name: </strong></label>
 <input name="name" id="name"><br>
 
