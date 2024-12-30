@@ -32,8 +32,8 @@ public class ItemDAOJPAImpl implements ItemDAO {
 	//NO em.close()
 	@Override
 	public Item create(Item newItem) {
-		// TODO Auto-generated method stub
-		return null;
+		em.persist(newItem);
+		return newItem;
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class ItemDAOJPAImpl implements ItemDAO {
 		if (existingItem != null) {
 			existingItem.setName(updatingItem.getName());
 			existingItem.setType(updatingItem.getType());
-			existingItem.setCondition(updatingItem.getCondition());
+			existingItem.setStatus(updatingItem.getStatus());
 			existingItem.setQuantity(updatingItem.getQuantity());
 			
 			return existingItem;

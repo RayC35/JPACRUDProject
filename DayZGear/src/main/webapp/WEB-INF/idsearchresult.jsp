@@ -19,7 +19,7 @@
 			<li><strong>ID: </strong>${ searchResult.id}</li>
 			<li><strong>Item Name: </strong>${ searchResult.name}</li>
 			<li><strong>Item Type: </strong>${searchResult.type}</li>
-			<li><strong>Item Condition: </strong>${searchResult.condition}</li>
+			<li><strong>Item Condition: </strong>${searchResult.status}</li>
 			<li><strong>Quantity: </strong>${searchResult.quantity}</li>
 		  </ul>
 		</c:when>

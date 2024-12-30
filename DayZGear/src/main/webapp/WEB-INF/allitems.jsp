@@ -16,7 +16,7 @@
 				<tr>
 					<td><a href="idsearchresult.do?itemId=${items.id}">${items.name}</a></td>
 					<td>${items.type }</td>
-					<td>${items.condition}</td>
+					<td>${items.status}</td>
 					<td>${items.quantity}</td>
 					<!--DELETE FORM -->
 			<form action="delete.do" method="post">
