@@ -1,0 +1,36 @@
+body {
+	color: white;
+}
+body::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	background-image: 
+		url(https://i.imgur.com/nI5U8Ps.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.content {
+	padding-top: 50px;
+}
+
+h1 {
+	margin-bottom: 30px;
+}
+
+#itemId {
+	margin-bottom: 80px;
+}
+#ID {
+	font-weight: bold;
+}
+table, th, td {
+	border: 1px solid white;
+}
+
