@@ -20,6 +20,11 @@ public class Item {
 	private String status;
 	
 	private int quantity;
+	
+	private double weight;
+	
+	private String description;
+
 
 
 	public Item() {
@@ -65,10 +70,25 @@ public class Item {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+	public double getWeight() {
+		return weight;
+	}
+	
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", type=" + type + ", status=" + status + ", quantity="
-				+ quantity + "]";
+		return "Item [id=" + id + ", name=" + name + ", type=" + type + ", status=" + status + ", quantity=" + quantity
+				+ ", weight=" + weight + ", description=" + description + "]";
 	}
 
 	

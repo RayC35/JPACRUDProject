@@ -13,44 +13,50 @@
 <style>
 table {
 background-color: #656962;
+width: 50%;
 }
 #itemLink {
-color: #151cd4;
+color: DarkBlue;
 }
+
 </style>
 </head>
 <body>
+
 	<nav>
 		<a href="home.do">Home</a>
 	</nav>
-	<h1>DayZ Inventory List</h1>
+	
+	<h1>Inventory List</h1>
 	
 	<c:forEach var="items" items="${itemList}">
 		<table>
 				<tr>
 					<th>Item Name</th>
+					<th>Item Description</th>
 					<th>Item Type</th>
 					<th>Item Condition</th>
 					<th>Quantity</th>
+					<th>Weight</th>
 				</tr>
 				<tr>
 					<td><a href="idsearchresult.do?itemId=${items.id}" id="itemLink">${items.name}</a></td>
+					<td>"${items.description }"</td>
 					<td>${items.type }</td>
 					<td>${items.status}</td>
 					<td>${items.quantity}</td>
+					<td>${items.weight}</td>
 				</tr>	
 		</table>
+						<form action="delete.do" method="post" style="display:inline;">
+						<input type="hidden" name="itemId" value="${items.id}" /> <input
+						type="submit" value="Delete" class="btn btn-danger btn-sm">
+						</form>
 
-			<form action="delete.do" method="post">
-				<input type="hidden" name="itemId" value="${items.id}" /> <input
-					type="submit" value="Delete">
-			</form>
-
-			<!-- EDIT FORM -->
-			<form action="updateItem.do" method="get">
-				<input type="hidden" name="itemId" value="${items.id}" /> <input
-					type="submit" value="Edit">
-			</form>
+						<form action="updateItem.do" method="get" style="display:inline;">
+						<input type="hidden" name="itemId" value="${items.id}" /> <input
+						type="submit" value="Edit" class="btn btn-primary btn-sm">
+						</form>
 				<br>
 			</c:forEach>
 

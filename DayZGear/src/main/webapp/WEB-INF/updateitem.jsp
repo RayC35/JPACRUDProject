@@ -8,7 +8,11 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
 	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link rel="stylesheet" href="css/main.css?v=1.0">
-
+<style>
+h1 {
+margin-bottom: 100px;
+}
+</style>
 </head>
 <body>
 <nav>
@@ -16,7 +20,7 @@
 	</nav>
 <h1>Edit Item</h1>
 
-<h2>${item.name }</h2>
+<h2><u>${item.name }</u></h2>
 <strong>Item Type: </strong>${item.type }
 
 <form action="updateItem.do" method="post">
@@ -35,7 +39,7 @@
 </select>
 
 <label for="quantity"><strong>Quantity: </strong></label>
-<input type="number" name="quantity" id="quantity" min="1" max="1000">
+<input type="number" name="quantity" id="quantity" min="1" max="1000"><br>
 
 <input type="submit" value="Submit">
 </form>

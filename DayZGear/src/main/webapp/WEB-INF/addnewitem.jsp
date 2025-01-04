@@ -28,9 +28,10 @@ margin-bottom: 100px;
 
 <label for="type"><strong>Item Type: </strong></label>
 <select name="type" id="type">
-	<option value="Medical">Medical</option>
 	<option value="Clothing">Clothing</option>
-	<option value="Food">Food/Drink</option>
+	<option value="Food/Drink">Food/Drink</option>
+	<option value="Medical">Medical</option>
+	<option value="Weapons/Ammo">Weapons/Ammo</option>
 	<option value="Miscellaneous">Miscellaneous</option>
 </select>
 
@@ -41,10 +42,10 @@ margin-bottom: 100px;
 	<option value="Damaged">Damaged</option>
 	<option value="Badly damaged">Badly Damaged</option>
 	<option value="Ruined">Ruined</option>
-</select>
+</select><br>
 
 <label for="quantity"><strong>Quantity: </strong></label>
-<input type="number" name="quantity" id="quantity" min="1" max="1000">
+<input type="number" name="quantity" id="quantity" min="1" max="1000"><br>
 
 <input type="submit" value="Submit">
 </form>

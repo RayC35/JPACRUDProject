@@ -33,7 +33,7 @@ class ItemTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		item = em.find(Item.class, 2);
+		item = em.find(Item.class, 25);
 	}
 
 	@AfterEach
@@ -45,10 +45,12 @@ class ItemTest {
 	void test_Item_entity_mapping() {
 //		assertNull(item);
 		assertNotNull(item);
-		assertEquals("T-shirt", item.getName());
-		assertEquals("Clothing", item.getType());
+		assertEquals("Carp Fillet", item.getName());
+		assertEquals("Food/Drink", item.getType());
 		assertEquals("Worn", item.getStatus());
-		assertEquals(1, item.getQuantity());
+		assertEquals(2, item.getQuantity());
+		assertEquals(1.1, item.getWeight());
+		assertEquals(1, item.getDescription());
 		
 	}
 

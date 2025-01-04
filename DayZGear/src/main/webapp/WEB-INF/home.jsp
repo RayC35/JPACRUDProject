@@ -30,7 +30,7 @@
 
 <h3><a href = "allitems.do">See All Items</a></h3>
 
-<h3><a href = "addnewitem.do">Add an Item to the Database</a></h3>
+<h3><a href = "addnewitem.do">Add an Item to Inventory</a></h3>
 
 
 </div>

@@ -27,16 +27,20 @@ background-color: #656962;
 			<tr>
 				<th>ID</th>
 				<th>Item Name</th>
+				<th>Item Description</th>
 				<th>Item Type</th>
 				<th>Item Condition</th>
 				<th>Quantity</th>
+				<th>Weight</th>
 			</tr>
 			<tr>
 				<td>${searchResult.id }</td>
 				<td>${searchResult.name }</td>
+				<td>${searchResult.description }</td>
 				<td>${searchResult.type }</td>
 				<td>${searchResult.status }</td>
 				<td>${searchResult.quantity }</td>
+				<td>${searchResult.weight }</td>
 			</tr>
 		</table>
 		</c:when>
