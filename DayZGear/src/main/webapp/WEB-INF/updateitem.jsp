@@ -29,6 +29,9 @@ margin-bottom: 100px;
 <input type="hidden" name="name" value="${ item.name}">
 <input type="hidden" name="type" value="${ item.type}">
 <!--  ------------------------------------------------------>
+<label for="description"><strong>Description: </strong></label>
+<input name="description" id="description" value="${item.description }"><br>
+
 <label for="status"><strong>Item Condition: </strong></label>
 <select name="status" id="status">
 	<option value="Pristine">Pristine</option>
@@ -39,7 +42,10 @@ margin-bottom: 100px;
 </select>
 
 <label for="quantity"><strong>Quantity: </strong></label>
-<input type="number" name="quantity" id="quantity" min="1" max="1000"><br>
+<input type="number" name="quantity" id="quantity" min="1" max="1000" value="${item.quantity }"><br>
+
+<label for="weight"><strong>Weight: </strong></label>
+<input type="number" name="weight" id="weight" min="0" max="1000" step=".01" value="${item.weight }"><br>
 
 <input type="submit" value="Submit">
 </form>

@@ -24,7 +24,8 @@ color: DarkBlue;
 <body>
 
 	<nav>
-		<a href="home.do">Home</a>
+		<a href="home.do">Home</a><br>
+		<a href="addnewitem.do">Add An Item</a>
 	</nav>
 	
 	<h1>Inventory List</h1>
@@ -41,7 +42,14 @@ color: DarkBlue;
 				</tr>
 				<tr>
 					<td><a href="idsearchresult.do?itemId=${items.id}" id="itemLink">${items.name}</a></td>
-					<td>"${items.description }"</td>
+					<c:choose>
+					<c:when test="${empty items.description }">
+						<td>${items.description }</td>
+						</c:when>
+					<c:otherwise>
+						<td>"${items.description }"</td>
+					</c:otherwise>
+					</c:choose>
 					<td>${items.type }</td>
 					<td>${items.status}</td>
 					<td>${items.quantity}</td>

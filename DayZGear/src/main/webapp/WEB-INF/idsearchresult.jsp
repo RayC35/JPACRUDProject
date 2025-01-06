@@ -18,7 +18,8 @@ background-color: #656962;
 </head>
 <body>
 	<nav>
-		<a href="home.do">Home</a>
+		<a href="home.do">Home</a><br>
+		<a href="addnewitem.do">Add An Item</a>
 	</nav>
 <h1>Search Result</h1>
 		<c:choose>

@@ -27,16 +27,20 @@ width: 50%;
 		<tr>
 			<th>ID</th>
 			<th>Item Name</th>
+			<th>Item Description</th>
 			<th>Item Type</th>
 			<th>Item Condition</th>
 			<th>Quantity</th>
+			<th>Weight</th>
 		</tr>
 		<tr>
 			<td>${item.id }</td>
 			<td>${item.name }</td>
+			<td>${item.description }</td>
 			<td>${item.type }</td>
 			<td>${item.status }</td>
 			<td>${item.quantity }</td>
+			<td>${item.weight }</td>
 		</tr>
 	</table>
 	

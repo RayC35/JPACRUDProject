@@ -43,6 +43,8 @@ public class ItemDAOJPAImpl implements ItemDAO {
 			existingItem.setType(updatingItem.getType());
 			existingItem.setStatus(updatingItem.getStatus());
 			existingItem.setQuantity(updatingItem.getQuantity());
+			existingItem.setWeight(updatingItem.getWeight());
+			existingItem.setDescription(updatingItem.getDescription());
 			
 			return existingItem;
 		} else {

@@ -26,6 +26,9 @@ margin-bottom: 100px;
 <label for="name"><strong>Item Name: </strong></label>
 <input name="name" id="name"><br>
 
+<label for="description"><strong>Description: </strong></label>
+<input name="description" id="description"><br>
+
 <label for="type"><strong>Item Type: </strong></label>
 <select name="type" id="type">
 	<option value="Clothing">Clothing</option>
@@ -46,6 +49,9 @@ margin-bottom: 100px;
 
 <label for="quantity"><strong>Quantity: </strong></label>
 <input type="number" name="quantity" id="quantity" min="1" max="1000"><br>
+
+<label for="weight"><strong>Weight: </strong></label>
+<input type="number" name="weight" id="weight" min="0" max="1000" step=".01"><br>
 
 <input type="submit" value="Submit">
 </form>
